@@ -1,0 +1,191 @@
+/* ── Premium fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
+
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-popover-border: hsl(var(--popover-border));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-border: var(--primary-border);
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-secondary-border: var(--secondary-border);
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-muted-border: var(--muted-border);
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-accent-border: var(--accent-border);
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-destructive-border: var(--destructive-border);
+
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-primary-border: var(--sidebar-primary-border);
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-accent-border: var(--sidebar-accent-border);
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  /* Almarai = Arabic UI | Outfit = English sans | Cormorant = English serif display */
+  --font-sans: 'Almarai', 'Outfit', sans-serif;
+  --font-serif: 'Cormorant Garamond', 'Almarai', serif;
+  --font-mono: Menlo, monospace;
+  --font-display: 'Outfit', 'Almarai', sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --button-outline: rgba(0,0,0, .10);
+  --badge-outline: rgba(0,0,0, .05);
+
+  --opaque-button-border-intensity: -8;
+
+  --elevate-1: rgba(0,0,0, .03);
+  --elevate-2: rgba(0,0,0, .08);
+
+  --background: 222 80% 7%;
+  --foreground: 40 35% 94%;
+
+  --border: 220 40% 22%;
+
+  --card: 222 78% 10%;
+  --card-foreground: 40 35% 94%;
+  --card-border: 220 40% 22%;
+
+  --popover: 222 78% 10%;
+  --popover-foreground: 40 35% 94%;
+  --popover-border: 220 40% 22%;
+
+  --primary: 43 65% 52%;
+  --primary-foreground: 222 80% 7%;
+  --primary-border: rgba(212,175,55,0.3);
+
+  --secondary: 220 30% 20%;
+  --secondary-foreground: 40 35% 90%;
+  --secondary-border: rgba(255,255,255,0.08);
+
+  --muted: 220 40% 14%;
+  --muted-foreground: 220 20% 55%;
+  --muted-border: rgba(255,255,255,0.06);
+
+  --accent: 43 40% 30%;
+  --accent-foreground: 40 35% 94%;
+  --accent-border: rgba(212,175,55,0.2);
+
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+  --destructive-border: rgba(239,68,68,0.3);
+
+  --sidebar: 222 78% 8%;
+  --sidebar-foreground: 40 35% 85%;
+  --sidebar-border: rgba(255,255,255,0.06);
+  --sidebar-primary: 43 65% 52%;
+  --sidebar-primary-foreground: 222 80% 7%;
+  --sidebar-primary-border: rgba(212,175,55,0.3);
+  --sidebar-accent: 220 40% 14%;
+  --sidebar-accent-foreground: 40 35% 90%;
+  --sidebar-accent-border: rgba(255,255,255,0.06);
+  --sidebar-ring: 43 65% 52%;
+
+  --input: 220 40% 18%;
+  --ring: 43 65% 52%;
+  --radius: 0.75rem;
+}
+
+* {
+  border-color: hsl(var(--border));
+  box-sizing: border-box;
+}
+
+html {
+  direction: rtl;
+  scroll-behavior: auto;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: 'Almarai', 'Outfit', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* English content uses Outfit */
+[lang="en"], .font-en, .latin {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Display/serif headings */
+.font-display {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Smooth scroll container — Lenis handles this */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(212, 175, 55, 0.25);
+  color: #fff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.5);
+}
